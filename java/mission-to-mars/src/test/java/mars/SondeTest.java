@@ -25,7 +25,7 @@ class SondeTest {
 	void helicoptereDoitEtreRecupere() {
 		// Arrange
 		Sonde sut = new Sonde();
-		ModuleMartien ingenuity = new Helicoptere(Direction.NORD, new Position(4, 4, 50));
+		ModuleMartienVolant ingenuity = new Helicoptere(Direction.NORD, new Position(4, 4, 50));
 
 		// Act
 		sut.preparerRecuperation(ingenuity);

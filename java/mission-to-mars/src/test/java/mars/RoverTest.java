@@ -66,6 +66,18 @@ class RoverTest {
 	}
 
 	@Test
+	void doitAvancer1CaseVersNordOuestSiTourneVersLeNordOuest() {
+		// Arrange
+		sut = new Rover(Direction.NORDOUEST, new Position(4, 4, 0));
+
+		// Act
+		sut.avancer();
+
+		// Assert
+		assertEquals(new Position(3, 5, 0), sut.getPosition());
+	}
+
+	@Test
 	void doitReculer1CaseVersSudSiTourneVersLeNord() {
 		// Arrange
 		sut = new Rover(Direction.NORD, new Position(4, 4, 0));
@@ -112,23 +124,16 @@ class RoverTest {
 		// Assert
 		assertEquals(new Position(3, 4, 0), sut.getPosition());
 	}
-
+/*
 	@Test
-	void neDoitPasMonter() {
+	void doitReculer1CaseVersSudEstSiTourneVersLeNordOuest() {
 		// Arrange
-		sut = new Rover(Direction.NORD, new Position(4, 4, 0));
+		sut = new Rover(Direction.NORDOUEST, new Position(4, 4, 0));
 
-		// Act + Assert
-		assertThrows(UnsupportedOperationException.class, () -> sut.monter());
-	}
+		// Act
+		sut.avancer();
 
-	@Test
-	void neDoitPasDescendre() {
-		// Arrange
-		sut = new Rover(Direction.SUD, new Position(4, 4, 3));
-
-		// Act + Assert
-		assertThrows(UnsupportedOperationException.class, () -> sut.descendre());
-	}
-
+		// Assert
+		assertEquals(new Position(5, 3, 0), sut.getPosition());
+	}*/
 }

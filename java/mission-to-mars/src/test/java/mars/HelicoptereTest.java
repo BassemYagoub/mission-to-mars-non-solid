@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 public class HelicoptereTest {
 
-	ModuleMartien sut;
+	ModuleMartienVolant sut;
 
 	@Test
 	void initialisationAtterissage() {
