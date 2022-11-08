@@ -124,7 +124,7 @@ class RoverTest {
 		// Assert
 		assertEquals(new Position(3, 4, 0), sut.getPosition());
 	}
-/*
+
 	@Test
 	void doitReculer1CaseVersSudEstSiTourneVersLeNordOuest() {
 		// Arrange
@@ -135,5 +135,5 @@ class RoverTest {
 
 		// Assert
 		assertEquals(new Position(5, 3, 0), sut.getPosition());
-	}*/
+	}
 }

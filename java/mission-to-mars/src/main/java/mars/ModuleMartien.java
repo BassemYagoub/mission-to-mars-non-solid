@@ -1,18 +1,54 @@
 package mars;
 
-public interface ModuleMartien {
+import lombok.Getter;
 
-	Position getPosition();
+public abstract class ModuleMartien {
+	@Getter
+	protected boolean pretPourRecuperation = false;
 
-	void avancer();
+	@Getter
+	protected Position position;
 
-	void reculer();
+	private Direction direction;
 
-	void monter();
+	public ModuleMartien(Direction direction, Position position) {
+		this.direction = direction;
+		this.position = position;
+	}
 
-	void descendre();
+	public void avancer() {
+		switch (direction) {
+			case NORD:
+				position = new Position(position.getX(), position.getY() + 1, position.getZ());
+				break;
+			case SUD:
+				position = new Position(position.getX(), position.getY() - 1, position.getZ());
+				break;
+			case OUEST:
+				position = new Position(position.getX() - 1, position.getY(), position.getZ());
+				break;
+			default:
+				position = new Position(position.getX() + 1, position.getY(), position.getZ());
+		}
+	}
 
-	void activerRecuperation();
+	public void reculer() {
+		switch (direction) {
+			case NORD:
+				position = new Position(position.getX(), position.getY() - 1, position.getZ());
+				break;
+			case SUD:
+				position = new Position(position.getX(), position.getY() + 1, position.getZ());
+				break;
+			case OUEST:
+				position = new Position(position.getX() + 1, position.getY(), position.getZ());
+				break;
+			default:
+				position = new Position(position.getX() - 1, position.getY(), position.getZ());
+		}
+	}
 
-	boolean isPretPourRecuperation();
+	public void activerRecuperation() {
+		pretPourRecuperation = true;
+	}
 }
